@@ -44,7 +44,7 @@ function App() {
               <Refine
                 notificationProvider={useNotificationProvider}
                 routerProvider={routerBindings}
-                dataProvider={dataProvider("https://api.fake-rest.refine.dev")}
+                dataProvider={dataProvider("https://jsonplaceholder.typicode.com")}
                 resources={[
                   // {
                   //   name: "blog_posts",
