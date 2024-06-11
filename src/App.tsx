@@ -33,6 +33,7 @@ import {
   CategoryShow,
 } from "./pages/categories";
 import { UserCreate, UserEdit, UserList, UserShow } from "./pages/users";
+import { API_URL } from "./utils";
 
 function App() {
   return (
@@ -44,7 +45,7 @@ function App() {
               <Refine
                 notificationProvider={useNotificationProvider}
                 routerProvider={routerBindings}
-                dataProvider={dataProvider("https://jsonplaceholder.typicode.com")}
+                dataProvider={dataProvider(API_URL)}
                 resources={[
                   // {
                   //   name: "blog_posts",

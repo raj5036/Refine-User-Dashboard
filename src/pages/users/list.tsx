@@ -6,7 +6,7 @@ import { LoadingIndicator, ProfileCard } from "../../components";
 
 export const UserList: React.FC = () => {
 	const { tableProps } = useTable<IUser>({syncWithLocation: true})
-	console.log(tableProps)
+	// console.log(tableProps)
 	return (
 		<React.Fragment>
 			{tableProps.loading ? 
