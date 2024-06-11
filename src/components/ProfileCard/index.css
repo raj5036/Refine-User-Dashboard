@@ -1,0 +1,28 @@
+.profileCardContainer {
+	width: 100%;
+	height: 100%;
+}
+
+.profileCardImage {
+	width: 100%;
+	height: 150px;
+	background-color: #D3D3D3;
+}
+
+.profileInfoContainer {
+	padding: 10px;
+}
+
+.profileInfoContainer * {
+	margin: 0;
+}
+
+.profileInfoContainer *:not(.profileName) {
+	font-size: 13px;
+}
+
+.profileName {
+	font-size: 18px;
+    font-weight: 500;
+	margin-bottom: 5px;
+}
