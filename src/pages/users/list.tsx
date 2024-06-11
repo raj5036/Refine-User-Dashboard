@@ -12,9 +12,9 @@ export const UserList: React.FC = () => {
 			{tableProps.loading ? 
 				<LoadingIndicator /> : (
 					<React.Fragment>
-						<Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+						<Row gutter={[64, { xs: 8, sm: 16, md: 24, lg: 32 }]}>
 							{tableProps?.dataSource?.map((user) => (
-								<Col key={user.id} span={6}>
+								<Col key={user.id} xs={24} sm={12} md={8} lg={8} xl={6} xxl={6}>
 									<ProfileCard user={user}/>
 								</Col>
 							))}
