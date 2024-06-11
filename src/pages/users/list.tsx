@@ -11,7 +11,7 @@ export const UserList: React.FC = () => {
 		<React.Fragment>
 			{tableProps.loading ? 
 				<LoadingIndicator /> : (
-					<React.Fragment>
+					<div style={{overflowX: "hidden"}}>
 						<Row gutter={[64, { xs: 8, sm: 16, md: 24, lg: 32 }]}>
 							{tableProps?.dataSource?.map((user) => (
 								<Col key={user.id} xs={24} sm={12} md={8} lg={8} xl={6} xxl={6}>
@@ -19,7 +19,7 @@ export const UserList: React.FC = () => {
 								</Col>
 							))}
 						</Row>	
-					</React.Fragment>
+					</div>
 				)}
 		</React.Fragment>
 	)
