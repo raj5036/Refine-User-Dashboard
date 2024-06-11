@@ -26,21 +26,13 @@ export const UserEdit: React.FC<PropTypes> = ({ isModalOpen, setIsModalOpen, use
 	});
 
 	const handleCancel = () => {
-		console.log('onOk')
 		setIsModalOpen(false);
 	};
 
-	// const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
-	// 	console.log('Success:', values);
-	// };
-	// const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (errorInfo) => {
-	// 	console.log('Failed:', errorInfo);
-	// };
-
 	return (
-		<Modal title="" open={isModalOpen} onOk={handleCancel} onCancel={handleCancel} okButtonProps={saveButtonProps}>
+		<Modal open={isModalOpen} onOk={handleCancel} onCancel={handleCancel} okButtonProps={saveButtonProps}>
 			<Edit 
-				// saveButtonProps={saveButtonProps} 
+				saveButtonProps={saveButtonProps} 
 				isLoading={formLoading} 
 				showHeaderButtons={false} 
 				canDelete={false}
