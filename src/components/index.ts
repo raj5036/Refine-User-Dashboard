@@ -1,3 +1,4 @@
 export { Header } from "./header";
-import { LoadingIndicator } from "./LoadingIndicator/LoadingIndicator";
+export { LoadingIndicator } from "./LoadingIndicator";
+export { ProfileCard } from "./ProfileCard";
 

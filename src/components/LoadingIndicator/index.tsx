@@ -1,5 +1,5 @@
 import React from "react"
-import './LoadingIndicator.css'
+import './index.css'
 
 export const LoadingIndicator: React.FC = () => {
 	return (	
