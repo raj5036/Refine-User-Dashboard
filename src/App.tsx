@@ -20,19 +20,7 @@ import { App as AntdApp } from "antd";
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import { Header } from "./components/header";
 import { ColorModeContextProvider } from "./contexts/color-mode";
-import {
-  BlogPostCreate,
-  BlogPostEdit,
-  BlogPostList,
-  BlogPostShow,
-} from "./pages/blog-posts";
-import {
-  CategoryCreate,
-  CategoryEdit,
-  CategoryList,
-  CategoryShow,
-} from "./pages/categories";
-import { UserCreate, UserEdit, UserList, UserShow } from "./pages/users";
+import { UserList } from "./pages/users";
 import { API_URL } from "./utils";
 
 function App() {
@@ -102,9 +90,6 @@ function App() {
                     />
                     <Route path="/users">
                       <Route index element={<UserList/>}/>
-                      <Route path="create" element={<UserCreate />}/>
-                      <Route path="edit/:id" element={<UserEdit />}/>
-                      <Route path="show/:id" element={<UserShow />}/>
                     </Route>
                     {/* <Route path="/blog-posts">
                       <Route index element={<BlogPostList />} />
