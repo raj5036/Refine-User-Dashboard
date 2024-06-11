@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-// import { GlobalOutlined, MailOutlined, PhoneOutlined } from "@ant-design/icons"
 import { IUser } from "../../interfaces";
 import { DicebarAPI_URL } from "../../utils";
-
 import "./index.css"
 import { DeleteButton, EditButton } from "@refinedev/antd";
 import { GlobalOutlined, HeartFilled, HeartOutlined, MailOutlined, PhoneOutlined } from "@ant-design/icons";
@@ -26,7 +24,7 @@ export const ProfileCard: React.FC<PropTypes> = ({ user }) => {
 
 	return (
 		<React.Fragment>
-			{isModalOpen && <UserEdit isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}/>}
+			{isModalOpen && <UserEdit isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} user={user}/>}
 			<div className="profileCardContainer">
 				<img 
 					src={DicebarAPI_URL + user.username} 
