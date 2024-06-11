@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 // import { GlobalOutlined, MailOutlined, PhoneOutlined } from "@ant-design/icons"
 import { IUser } from "../../interfaces";
 import { DicebarAPI_URL } from "../../utils";
 
 import "./index.css"
-import { ShowButton, DeleteButton, EditButton } from "@refinedev/antd";
-import { GlobalOutlined, HeartTwoTone, MailOutlined, PhoneOutlined } from "@ant-design/icons";
+import { DeleteButton, EditButton } from "@refinedev/antd";
+import { GlobalOutlined, HeartFilled, HeartOutlined, MailOutlined, PhoneOutlined } from "@ant-design/icons";
 
 interface PropTypes {
 	user: IUser
 }
 
 export const ProfileCard: React.FC<PropTypes> = ({ user }) => {
+	const [liked, setLiked] = useState<boolean>(false);
+	const onLikeButtonClick = () => {
+		setLiked(!liked);
+	}
+
 	return (
 		<div className="profileCardContainer">
 			<img 
@@ -26,7 +31,13 @@ export const ProfileCard: React.FC<PropTypes> = ({ user }) => {
 				<div><GlobalOutlined /> {user.website}</div>
 			</div>
 			<div className="actionButtonsContainer">
-				<HeartTwoTone className="actionButtons"/>
+				{!liked ? <HeartOutlined 
+					className="actionButtons"
+					onClick={onLikeButtonClick}/> 
+					: <HeartFilled 
+						className="actionButtons liked"
+						onClick={onLikeButtonClick}
+					/>}
 				<EditButton hideText size="small" recordItemId={user.id} className="actionButtons"/>
 				<DeleteButton hideText size="small" recordItemId={user.id} className="actionButtons"/>
 			</div>
