@@ -1,8 +1,8 @@
-import { Edit, useForm } from "@refinedev/antd";
+import { useForm } from "@refinedev/antd";
 import { Form, Input, Modal } from "antd";
 import React from "react";
 import { IUser } from "../../interfaces";
-import { FormProps } from "antd/lib";
+import { Edit } from "../../components/crud/edit";
 
 interface PropTypes {
 	isModalOpen: boolean
@@ -18,11 +18,15 @@ interface FieldType {
 }
 
 export const UserEdit: React.FC<PropTypes> = ({ isModalOpen, setIsModalOpen, user }) => {
-	const { formProps, saveButtonProps, queryResult, formLoading } = useForm({
-		
+	const { formProps, saveButtonProps, formLoading  } = useForm<IUser>({
+		resource: "users",
+		id: user.id,
+		action: "edit",
+		warnWhenUnsavedChanges: true,
 	});
 
 	const handleCancel = () => {
+		console.log('onOk')
 		setIsModalOpen(false);
 	};
 
@@ -34,8 +38,14 @@ export const UserEdit: React.FC<PropTypes> = ({ isModalOpen, setIsModalOpen, use
 	// };
 
 	return (
-		<Modal title="Basic Modal" open={isModalOpen} onOk={handleCancel} onCancel={handleCancel}>
-			<Edit saveButtonProps={saveButtonProps} isLoading={formLoading}>
+		<Modal title="" open={isModalOpen} onOk={handleCancel} onCancel={handleCancel} okButtonProps={saveButtonProps}>
+			<Edit 
+				// saveButtonProps={saveButtonProps} 
+				isLoading={formLoading} 
+				showHeaderButtons={false} 
+				canDelete={false}
+				showSaveButton={false}
+			>
 				<Form
 					name="basic"
 					{...formProps}

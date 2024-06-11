@@ -60,7 +60,6 @@ function App() {
                     list: "/users",
                     create: "/users/create",
                     edit: "/users/edit/:id",
-                    show: "/users/show/:id",
                     meta: {
                       canDelete: true,
                     }
