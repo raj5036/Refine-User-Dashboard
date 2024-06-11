@@ -97,7 +97,7 @@ function App() {
                   >
                     <Route
                       index
-                      element={<NavigateToResource resource="blog_posts" />}
+                      element={<NavigateToResource resource="users" />}
                     />
                     <Route path="/users">
                       <Route index element={<UserList/>}/>
