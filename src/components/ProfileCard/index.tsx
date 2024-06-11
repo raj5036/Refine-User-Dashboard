@@ -3,7 +3,7 @@ import { IUser } from "../../interfaces";
 import { DicebarAPI_URL } from "../../utils";
 import "./index.css"
 import { DeleteButton, EditButton } from "@refinedev/antd";
-import { GlobalOutlined, HeartFilled, HeartOutlined, MailOutlined, PhoneOutlined } from "@ant-design/icons";
+import { DeleteFilled, GlobalOutlined, HeartFilled, HeartOutlined, MailOutlined, PhoneOutlined } from "@ant-design/icons";
 import { UserEdit } from "../../pages/users";
 
 interface PropTypes {
@@ -39,14 +39,22 @@ export const ProfileCard: React.FC<PropTypes> = ({ user }) => {
 				</div>
 				<div className="actionButtonsContainer">
 					{!liked ? <HeartOutlined 
-						className="actionButtons"
+						className="actionButtons like"
 						onClick={onLikeButtonClick}/> 
 						: <HeartFilled 
-							className="actionButtons liked"
+							className="actionButtons like"
 							onClick={onLikeButtonClick}
 						/>}
 					<EditButton hideText size="small" className="actionButtons" onClick={onEditButtonClick}/>
-					<DeleteButton hideText size="small" recordItemId={user.id} className="actionButtons"/>
+					<DeleteButton 
+						danger={false}
+						type="text"
+						hideText 
+						size="small" 
+						recordItemId={user.id} 
+						className="actionButtons delete"
+						icon={<DeleteFilled />}
+					/>
 				</div>
 			</div>
 		</React.Fragment>

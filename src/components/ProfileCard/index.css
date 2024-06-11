@@ -49,6 +49,10 @@
 	background-color: #E5E4E2;
 }
 
-.liked {
+.like {
 	color: red;
+}
+
+.delete {
+	color: grey;
 }
