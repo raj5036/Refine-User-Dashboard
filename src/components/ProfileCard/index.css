@@ -19,6 +19,11 @@
 
 .profileInfoContainer *:not(.profileName) {
 	font-size: 13px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: nowrap;
+	gap: 10px;
 }
 
 .profileName {

@@ -1,7 +1,11 @@
 import React from "react";
+// import { GlobalOutlined, MailOutlined, PhoneOutlined } from "@ant-design/icons"
 import { IUser } from "../../interfaces";
 import { DicebarAPI_URL } from "../../utils";
+
 import "./index.css"
+import { ShowButton, DeleteButton, EditButton } from "@refinedev/antd";
+import { GlobalOutlined, MailOutlined, PhoneOutlined } from "@ant-design/icons";
 
 interface PropTypes {
 	user: IUser
@@ -17,9 +21,18 @@ export const ProfileCard: React.FC<PropTypes> = ({ user }) => {
 			/>
 			<div className="profileInfoContainer">
 				<p className="profileName">{user.name}</p>
-				<p>{user.email}</p>
-				<p>{user.phone}</p>
-				<p>{user.website}</p>
+				<div>
+					<MailOutlined />
+					{user.email}
+				</div>
+				<div>
+					<PhoneOutlined />
+					{user.phone}
+				</div>
+				<div>
+					<GlobalOutlined />
+					{user.website}
+				</div>
 			</div>
 		</div>
 	);

@@ -13,9 +13,9 @@ export const UserList: React.FC = () => {
 				<LoadingIndicator /> : (
 					<React.Fragment>
 						<Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
-							{tableProps?.dataSource?.map((item) => (
-								<Col key={item.id} span={6}>
-									<ProfileCard user={item}/>
+							{tableProps?.dataSource?.map((user) => (
+								<Col key={user.id} span={6}>
+									<ProfileCard user={user}/>
 								</Col>
 							))}
 						</Row>	
